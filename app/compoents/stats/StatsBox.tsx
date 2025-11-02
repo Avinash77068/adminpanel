@@ -2,7 +2,7 @@
 
 export default function StatsBox({ rating=5,experience=5}:any) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+    <div className="grid grid-cols-1 py-4 md:grid-cols-4 gap-6 mb-6">
       {[
         { label: "Total Astrologers", count: "10", color: "blue" },
         { label: "Available", count: "10", color: "green" },

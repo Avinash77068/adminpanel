@@ -7,9 +7,10 @@ import {
   LogOut,
   Menu,
   X,
+  LogIn,
 } from "lucide-react";
 
-export const SidebarUI = () => {
+export const SidebarUI = ({sidebar,setsidebar,setPage,page}:any) => {
   return (
     <>
       {/* Mobile Header */}
@@ -24,7 +25,7 @@ export const SidebarUI = () => {
       </div>
 
       {/* Sidebar */}
-      <div className="fixed top-0 left-0 h-full w-64 z-50 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col p-6 space-y-6 shadow-lg">
+      <div className="h-screen relative hidden sm:block w-64 z-50 bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 text-white  flex-col p-6 space-y-6 shadow-lg">
         {/* Header */}
         <div className="flex items-center space-x-3 mb-8">
           <img
@@ -37,27 +38,56 @@ export const SidebarUI = () => {
 
         {/* Navigation */}
         <nav className="space-y-2">
-          <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg bg-orange-500 text-white">
+          <button
+            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg bg-orange-500 text-white"
+            onClick={() => setPage("dashboard")}
+          >
             <Home className="w-5 h-5" />
             <span>Dashboard</span>
           </button>
-          <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition">
+          <button
+            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            onClick={() => setPage("astrologer")}
+          >
             <Users className="w-5 h-5" />
             <span>Users</span>
           </button>
-          <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition">
+          <button
+            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            onClick={() => setPage("analytics")}
+          >
             <BarChart3 className="w-5 h-5" />
             <span>Analytics</span>
           </button>
-          <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition">
+          <button
+            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            onClick={() => setPage("settings")}
+          >
             <Settings className="w-5 h-5" />
             <span>Settings</span>
+          </button>
+          <button
+            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            onClick={() => setPage("login")}
+          >
+            <LogIn className="w-5 h-5" />
+            <span>Login</span>
+          </button>
+          <button
+            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            onClick={() => setPage("addAstrologer")}
+          >
+            <Users className="w-5 h-5" />
+            <span>Add Astrologer</span>
           </button>
         </nav>
 
         {/* Logout */}
-        <div className="pt-4 border-t border-gray-700">
-          <button className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-red-400 hover:bg-red-500 hover:text-white transition">
+        <div className="pt-4 border-t left-0 bottom-10 text-center px-4 absolute w-full border-gray-700">
+          <button
+            className="w-full flex items-center space-x-3 px-4 py-3 text-center rounded-lg text-red-400 hover:bg-red-500 hover:text-white transition"
+            onClick={() => setPage("logout")}
+          >
             <LogOut className="w-5 h-5" />
             <span>Logout</span>
           </button>
