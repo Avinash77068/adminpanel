@@ -24,7 +24,7 @@ export const SidebarUI = () => {
       </div>
 
       {/* Sidebar */}
-      <div className="fixed top-0 left-0 h-full w-64 z-50 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col p-6 space-y-6 shadow-lg">
+      <div className="h-screen w-64 z-50 bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col p-6 space-y-6 shadow-lg">
         {/* Header */}
         <div className="flex items-center space-x-3 mb-8">
           <img

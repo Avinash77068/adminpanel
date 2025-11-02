@@ -1,4 +1,4 @@
-import React from "react";
+"use client"
 import { X } from "lucide-react";
 
 export const AstrologerFormUI = () => {
@@ -6,7 +6,7 @@ export const AstrologerFormUI = () => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-r from-orange-500 to-amber-600 text-white p-6 rounded-t-2xl flex justify-between items-center">
+        <div className="sticky top-0 bg-linear-to-r from-orange-500 to-amber-600 text-white p-6 rounded-t-2xl flex justify-between items-center">
           <h2 className="text-2xl font-bold">Add New Astrologer</h2>
           <button className="p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition">
             <X className="w-6 h-6" />
@@ -24,6 +24,7 @@ export const AstrologerFormUI = () => {
               <input
                 type="text"
                 value="Pandit Ramesh Sharma"
+                onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -35,6 +36,7 @@ export const AstrologerFormUI = () => {
               <input
                 type="email"
                 value="rameshastro@example.com"
+                onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -46,6 +48,7 @@ export const AstrologerFormUI = () => {
               <input
                 type="tel"
                 value="+91 9876543210"
+                onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -57,6 +60,7 @@ export const AstrologerFormUI = () => {
               <input
                 type="url"
                 value="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400"
+                onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -68,6 +72,7 @@ export const AstrologerFormUI = () => {
               <input
                 type="number"
                 value="8"
+                onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -80,6 +85,7 @@ export const AstrologerFormUI = () => {
                 type="number"
                 step="0.1"
                 value="4.8"
+                onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -91,6 +97,7 @@ export const AstrologerFormUI = () => {
               <input
                 type="number"
                 value="600"
+                onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -113,6 +120,7 @@ export const AstrologerFormUI = () => {
               <input
                 type="number"
                 value="340"
+                onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -124,6 +132,7 @@ export const AstrologerFormUI = () => {
               <input
                 type="date"
                 value="2023-10-10"
+                  onChange={(e) => console.log(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
             </div>
@@ -189,6 +198,7 @@ export const AstrologerFormUI = () => {
               value="Astrologer Ramesh has over 8 years of experience in Vedic astrology and tarot reading. Specializes in love and relationship guidance."
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               rows={4}
+              onChange={(e) => console.log(e.target.value)}
             />
           </div>
 
@@ -202,7 +212,7 @@ export const AstrologerFormUI = () => {
             </button>
             <button
               type="button"
-              className="px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-600 text-white rounded-lg hover:from-orange-600 hover:to-amber-700 transition font-medium shadow-md hover:shadow-lg"
+              className="px-6 py-3 bg-linear-to-r from-orange-500 to-amber-600 text-white rounded-lg hover:from-orange-600 hover:to-amber-700 transition font-medium shadow-md hover:shadow-lg"
             >
               Add Astrologer
             </button>
