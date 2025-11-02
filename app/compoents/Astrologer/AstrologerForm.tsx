@@ -51,7 +51,7 @@ export const AstrologerFormUI = ({ onClose, setStatus }: any) => {
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-3 sm:p-6 z-50">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-r z-50 from-orange-500 to-amber-600 text-white p-5 sm:p-6 rounded-t-2xl flex justify-between items-center">
+        <div className="sticky top-0 bg-linear-to-r z-50 from-orange-500 to-amber-600 text-white p-5 sm:p-6 rounded-t-2xl flex justify-between items-center">
           <h2 className="text-xl sm:text-2xl font-bold">Add New Astrologer</h2>
           <button
             className="p-2 hover:bg-white/20 rounded-lg transition"
