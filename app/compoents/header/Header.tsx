@@ -1,6 +1,7 @@
 import React from 'react'
-
-export default function Header() {
+import { GenericButton } from '../customModal/GenericButton';
+import { Moon } from 'lucide-react';
+export default function Header({sidebar,setsidebar}:any) {
   return (
     <>
       {/* HEADER */}
@@ -19,6 +20,7 @@ export default function Header() {
             </div>
             <p className="text-sm text-gray-600">Manage your astrology team</p>
           </div>
+          <GenericButton label='Dark mode' variant='ghost' icon={<Moon className='w-5 h-5'/>}/>
         </div>
       </header>
     </>

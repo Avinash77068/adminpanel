@@ -9,7 +9,7 @@ import {
   Users,
 } from "lucide-react";
 
-export const AstrologerList = () => {
+export const AstrologerList = ({setDeleteModal, setProfileModal, setProfileEditModal}: {setDeleteModal: (modal: boolean) => void, setProfileModal: (modal: boolean) => void, setProfileEditModal: (modal: boolean) => void}) => {
   const astrologers = [
     {
       id: 1,
@@ -40,7 +40,49 @@ export const AstrologerList = () => {
       status: "busy",
     },
     {
-      id: 3,
+      id: 5,
+      name: "Guru Ravi Anand",
+      imageUrl:
+        "https://images.unsplash.com/photo-1603415526960-f7e0328b5c9b?auto=format&fit=crop&w=300&q=80",
+      email: "ravi.anand@example.com",
+      phone: "+91 99887 66554",
+      specialization: ["Kundli Matching", "Horoscope Analysis"],
+      experience: 20,
+      rating: 4.9,
+      hourlyRate: 1500,
+      totalConsultations: 3000,
+      status: "offline",
+    },
+    {
+      id: 4,
+      name: "Guru Ravi Anand",
+      imageUrl:
+        "https://images.unsplash.com/photo-1603415526960-f7e0328b5c9b?auto=format&fit=crop&w=300&q=80",
+      email: "ravi.anand@example.com",
+      phone: "+91 99887 66554",
+      specialization: ["Kundli Matching", "Horoscope Analysis"],
+      experience: 20,
+      rating: 4.9,
+      hourlyRate: 1500,
+      totalConsultations: 3000,
+      status: "offline",
+    },
+    {
+      id: 6,
+      name: "Guru Ravi Anand",
+      imageUrl:
+        "https://images.unsplash.com/photo-1603415526960-f7e0328b5c9b?auto=format&fit=crop&w=300&q=80",
+      email: "ravi.anand@example.com",
+      phone: "+91 99887 66554",
+      specialization: ["Kundli Matching", "Horoscope Analysis"],
+      experience: 20,
+      rating: 4.9,
+      hourlyRate: 1500,
+      totalConsultations: 3000,
+      status: "offline",
+    },
+    {
+      id: 7,
       name: "Guru Ravi Anand",
       imageUrl:
         "https://images.unsplash.com/photo-1603415526960-f7e0328b5c9b?auto=format&fit=crop&w=300&q=80",
@@ -82,7 +124,7 @@ export const AstrologerList = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full overflow-y-auto scrollbar-hide max-h-[calc(100vh-250px)]">
       {/* TABLE VIEW (Desktop) */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse">
@@ -199,13 +241,22 @@ export const AstrologerList = () => {
                 {/* Actions */}
                 <td className="py-4 px-4 text-center">
                   <div className="flex justify-center space-x-2">
-                    <button className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">
+                    <button
+                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition"
+                      onClick={() => setProfileModal(true)}
+                    >
                       <Eye className="w-4 h-4" />
                     </button>
-                    <button className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition">
+                    <button
+                      className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition"
+                      onClick={() => setProfileEditModal(true)}
+                    >
                       <Edit className="w-4 h-4" />
                     </button>
-                    <button className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition">
+                    <button
+                      className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
+                      onClick={() => setDeleteModal(true)}
+                    >
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
@@ -272,13 +323,22 @@ export const AstrologerList = () => {
             </div>
 
             <div className="flex justify-end space-x-2 mt-4">
-              <button className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition">
+              <button
+                className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition"
+                onClick={() => setProfileModal(true)}
+              >
                 <Eye className="w-4 h-4" />
               </button>
-              <button className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition">
+              <button
+                className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition"
+                onClick={() => setProfileEditModal(true)}
+              >
                 <Edit className="w-4 h-4" />
               </button>
-              <button className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition">
+              <button
+                className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
+                onClick={() => setDeleteModal(true)}
+              >
                 <Trash2 className="w-4 h-4" />
               </button>
             </div>

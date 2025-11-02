@@ -62,14 +62,14 @@ export default function FilterUI() {
           </details>
 
           {/* ACTIVE FILTER BADGE (optional visual) */}
-          <button className="flex items-center space-x-2 px-4 py-2.5 bg-gradient-to-r from-orange-500 to-amber-600 text-white rounded-lg hover:from-orange-600 hover:to-amber-700 transition shadow-md">
+          <button className="flex items-center space-x-2 px-4 py-2.5 bg-linear-to-r from-orange-500 to-amber-600 text-white rounded-lg hover:from-orange-600 hover:to-amber-700 transition shadow-md">
             <UserPlus className="w-4 h-4" />
             <span>Clear All Filters</span>
           </button>
         </div>
 
         {/* RIGHT SECTION - ADD BUTTON */}
-        <button className="flex items-center space-x-2 px-4 py-2.5 bg-gradient-to-r from-orange-500 to-amber-600 text-white rounded-lg hover:from-orange-600 hover:to-amber-700 transition shadow-md">
+        <button className="flex items-center space-x-2 px-4 py-2.5 bg-linear-to-r from-orange-500 to-amber-600 text-white rounded-lg hover:from-orange-600 hover:to-amber-700 transition shadow-md">
           <UserPlus className="w-4 h-4" />
           <span>Add Astrologer</span>
         </button>

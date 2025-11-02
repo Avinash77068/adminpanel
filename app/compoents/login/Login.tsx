@@ -17,9 +17,9 @@ export const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-orange-100 via-amber-100 to-yellow-50 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-orange-100 via-amber-100 to-yellow-50 flex items-center justify-center ">
       {/* Glass Card */}
-      <div className="relative w-full max-w-md backdrop-blur-xl bg-white/80 shadow-2xl rounded-3xl border border-white/30 p-8 transition-all duration-300 hover:shadow-amber-200">
+      <div className="relative w-full max-w-lg backdrop-blur-xl bg-white/80 shadow-2xl rounded-3xl border border-white/30 p-8 transition-all duration-300 hover:shadow-amber-200">
         {/* Header */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-linear-to-br from-orange-500 to-amber-600 rounded-full shadow-lg mb-5 animate-pulse">
@@ -72,7 +72,9 @@ export const Login = () => {
           </div>
 
           {/* Error Message */}
-          
+          {error && (
+            <p className="text-red-500 text-sm mt-2">{error}</p>
+          )}
 
           {/* Submit Button */}
           <button
