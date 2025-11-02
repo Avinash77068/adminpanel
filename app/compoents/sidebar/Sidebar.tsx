@@ -11,15 +11,16 @@ import {
 } from "lucide-react";
 
 export const SidebarUI = ({sidebar,setsidebar,setPage,page}:any) => {
+  const active = page;  
   return (
     <>
       {/* Mobile Header */}
       <div className="md:hidden fixed top-0 left-0 w-full bg-gray-900 text-white flex justify-between items-center px-4 py-3 shadow-lg z-40">
-        <button className="p-2 rounded-md hover:bg-gray-700 transition">
+        <button className="p-2 rounded-md  transition">
           <Menu className="w-5 h-5" />
         </button>
         <h1 className="text-lg font-bold">Astro Admin</h1>
-        <button className="p-2 rounded-md hover:bg-gray-700 transition">
+        <button className="p-2 rounded-md  transition">
           <X className="w-5 h-5" />
         </button>
       </div>
@@ -39,42 +40,42 @@ export const SidebarUI = ({sidebar,setsidebar,setPage,page}:any) => {
         {/* Navigation */}
         <nav className="space-y-2">
           <button
-            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg bg-orange-500 text-white"
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg ${active === "dashboard" ? "bg-amber-700" : ""} text-white`}
             onClick={() => setPage("dashboard")}
           >
             <Home className="w-5 h-5" />
             <span>Dashboard</span>
           </button>
           <button
-            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg ${active === "astrologer" ? "bg-amber-700" : ""} text-gray-300  hover:text-white transition`}
             onClick={() => setPage("astrologer")}
           >
             <Users className="w-5 h-5" />
             <span>Users</span>
           </button>
           <button
-            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg ${active === "analytics" ? "bg-amber-700" : ""} text-gray-300  hover:text-white transition`}
             onClick={() => setPage("analytics")}
           >
             <BarChart3 className="w-5 h-5" />
             <span>Analytics</span>
           </button>
           <button
-            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg ${active === "settings" ? "bg-amber-700" : ""} text-gray-300  hover:text-white transition`}
             onClick={() => setPage("settings")}
           >
             <Settings className="w-5 h-5" />
             <span>Settings</span>
           </button>
           <button
-            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg ${active === "login" ? "bg-amber-700" : ""} text-gray-300  hover:text-white transition`}
             onClick={() => setPage("login")}
           >
             <LogIn className="w-5 h-5" />
             <span>Login</span>
           </button>
           <button
-            className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white transition"
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg ${active === "addAstrologer" ? "bg-amber-700" : ""} text-gray-300  hover:text-white transition`}
             onClick={() => setPage("addAstrologer")}
           >
             <Users className="w-5 h-5" />
