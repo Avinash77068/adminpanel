@@ -1,33 +1,37 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { LogIn, User, Lock } from "lucide-react";
 
+interface LoginProps {
+  onLoginSuccess: () => void;
+}
 
-export const Login = () => {
+export const Login = ({ onLoginSuccess }: LoginProps) => {
   const [email, setEmail] = useState("admin@astrology.com");
   const [password, setPassword] = useState("admin123");
   const [error, setError] = useState("");
-
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
-
+    // Basic authentication logic
+    if (email === "admin@astrology.com" && password === "admin123") {
+      onLoginSuccess(); // Move to dashboard
+    } else {
+      setError("Invalid credentials. Please try again.");
+    }
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-orange-100 via-amber-100 to-yellow-50 flex items-center justify-center ">
-      {/* Glass Card */}
-      <div className="relative w-full max-w-lg backdrop-blur-xl bg-white/80 shadow-2xl rounded-3xl border border-white/30 p-8 transition-all duration-300 hover:shadow-amber-200">
+    <div className="min-h-screen w-full bg-gradient-to-br from-orange-100 via-amber-100 to-yellow-50 flex items-center justify-center">
+      <div className="relative w-full max-w-lg backdrop-blur-xl bg-white/80 shadow-2xl rounded-3xl border border-white/30 p-8">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-linear-to-br from-orange-500 to-amber-600 rounded-full shadow-lg mb-5 animate-pulse">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-amber-600 rounded-full shadow-lg mb-5 animate-pulse">
             <LogIn className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">
-            Admin Login
-          </h1>
+          <h1 className="text-3xl font-extrabold text-gray-900">Admin Login</h1>
           <p className="text-gray-500 mt-1 text-sm">
             Astrologer Management System
           </p>
@@ -46,7 +50,7 @@ export const Login = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none shadow-sm placeholder-gray-400"
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none shadow-sm"
                 placeholder="admin@astrology.com"
                 required
               />
@@ -64,7 +68,7 @@ export const Login = () => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none shadow-sm placeholder-gray-400"
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none shadow-sm"
                 placeholder="Enter your password"
                 required
               />
@@ -72,14 +76,12 @@ export const Login = () => {
           </div>
 
           {/* Error Message */}
-          {error && (
-            <p className="text-red-500 text-sm mt-2">{error}</p>
-          )}
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
-          {/* Submit Button */}
+          {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-linear-to-r from-orange-500 to-amber-600 text-white py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95"
+            className="w-full bg-gradient-to-r from-orange-500 to-amber-600 text-white py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95"
           >
             Sign In
           </button>

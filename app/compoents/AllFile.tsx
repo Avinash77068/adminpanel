@@ -14,30 +14,37 @@ import SettingsPage from "./Astrologer/SettingPage";
 import AnalyticsPage from "./stats/AnalyticsPage";
 
 export default function AllFile() {
+  // State
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [page, setPage] = useState("dashboard");
-  const [sidebar, setsidebar] = useState<boolean>(true);
+  const [sidebar, setSidebar] = useState<boolean>(true);
   const [status, setStatus] = useState("Free");
   const [deleteModal, setDeleteModal] = useState<boolean>(false);
   const [profileModal, setProfileModal] = useState<boolean>(false);
   const [profileEditModal, setProfileEditModal] = useState<boolean>(false);
+
+  // If not logged in → show Login page
+  if (!isAuthenticated) {
+    return <Login onLoginSuccess={() => setIsAuthenticated(true)} />;
+  }
+
+  // After login → show main dashboard
   return (
     <div className="flex h-screen overflow-hidden w-full bg-gray-100">
-      {/* sideba */}
+      {/* Sidebar */}
       <SidebarUI
         sidebar={sidebar}
-        setsidebar={setsidebar}
+        setsidebar={setSidebar}
         page={page}
         setPage={setPage}
       />
 
-      {/* MAIN CONTENT */}
-      <div className="flex-1 flex flex-col overflow-y-auto">
-        {/* HEADER */}
-        <Header sidebar={sidebar} setsidebar={setsidebar} />
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col overflow-y-auto hide-scrollbar">
+        <Header sidebar={sidebar} setsidebar={setSidebar} />
 
-        {/* PAGE CONTENT */}
-        <main className="flex-1 px-4 space-y-6">
-          {/* Dashboard */}
+        <main className="flex-1">
+          {/* Dashboard Page */}
           {page === "dashboard" && (
             <>
               <StatsBox />
@@ -48,8 +55,11 @@ export default function AllFile() {
               />
             </>
           )}
+
+          {/* Analytics Page */}
           {page === "analytics" && <AnalyticsPage />}
-          {/* Astrologer Management */}
+
+          {/* Astrologer Management Page */}
           {page === "astrologer" && (
             <>
               <FilterUI />
@@ -61,14 +71,18 @@ export default function AllFile() {
             </>
           )}
 
-          {/* Hidden UI Components (temporarily kept) */}
+          {/* Add Astrologer */}
           {page === "addAstrologer" && (
             <AstrologerFormUI
               onClose={() => setPage("astrologer")}
               setStatus={setStatus}
             />
           )}
+
+          {/* Settings Page */}
           {page === "settings" && <SettingsPage />}
+
+          {/* Modals */}
           {deleteModal && (
             <GenericModalUI
               title="Delete Astrologer"
@@ -83,7 +97,6 @@ export default function AllFile() {
           {profileEditModal && (
             <AstrologerFormUI onClose={() => setProfileEditModal(false)} />
           )}
-          {page === "login" && <Login />}
         </main>
       </div>
     </div>

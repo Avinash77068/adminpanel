@@ -44,7 +44,7 @@ export default function AstrologerProfileSettings() {
 
   return (
     <div className="flex bg-gray-50 ">
-      <main className="flex-1 p-8">
+      <main className="flex-1 ">
         <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border p-6 relative">
           {/* Profile Header */}
           <div className="flex items-center justify-between mb-8">
